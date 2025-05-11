@@ -98,15 +98,13 @@ public class ControllerViewArbol {
     }
 
     public void recorrerArbol(ActionEvent event){
-
-        arbolBinario.mostrar();
-
     }
     private void configurarBoton(){
         MenuItem I=new MenuItem("Preorden");
         MenuItem I1 = new MenuItem("Inorden");
         MenuItem I2=new MenuItem("PostOrden");
         bttRecorrer.getItems().addAll(I,I1,I2);
+        I.setOnAction(event -> { imprimirResultado.setText(arbolBinario.mostrar());});
     }
 
 

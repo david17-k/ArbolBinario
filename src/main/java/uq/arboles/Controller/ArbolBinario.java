@@ -36,10 +36,8 @@ public class ArbolBinario {
         }
     }
 
-    public void mostrar(){
-        recorrerPreOrden(arbol);
-        System.out.println("_______________------------------------");
-        recorrerInorden(arbol);
+    public String mostrar(){
+        return recorrerPostOrden(arbol,"");
     }
 
     public void recorrerInorden(Nodo n){
@@ -59,11 +57,17 @@ public class ArbolBinario {
         }
     }
 
-    public void recorrerPostOrden(Nodo n){
+    public String recorrerPostOrden(Nodo n, String mensaje){// 7, 5 , 10 ,8 ,12
         if(n!=null){
-            recorrerPostOrden(n.getIzquierda());
+            recorrerPostOrden(n.getIzquierda(),mensaje);
+            recorrerPostOrden(n.getDerecha(),mensaje);
+             mensaje+= String.valueOf(n.getDato());
+        }else {
+            System.out.print(mensaje);
+            return mensaje;
         }
 
+        return mensaje;
     }
 
     public String verificar(int buscar){
