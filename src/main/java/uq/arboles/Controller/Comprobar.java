@@ -10,6 +10,6 @@ public class Comprobar {
         arbolBinario.agregarDato(20);
         arbolBinario.agregarDato(10);
         arbolBinario.agregarDato(50);
-       // arbolBinario.mostrar();
+        arbolBinario.mostrar();
     }
 }

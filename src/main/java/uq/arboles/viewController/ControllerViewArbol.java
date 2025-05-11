@@ -88,7 +88,6 @@ public class ControllerViewArbol {
 
     public void agregar(ActionEvent event){
         arbolBinario.agregarDato(Integer.parseInt(txtAgregarN.getText()));
-        arbolBinario.mostrar();
         dibujarArbol();
         limpiar();
     }
@@ -100,6 +99,7 @@ public class ControllerViewArbol {
 
     public void recorrerArbol(ActionEvent event){
 
+        arbolBinario.mostrar();
 
     }
     private void configurarBoton(){

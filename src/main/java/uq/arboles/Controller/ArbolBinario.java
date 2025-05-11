@@ -37,15 +37,29 @@ public class ArbolBinario {
     }
 
     public void mostrar(){
-        recorrer(arbol);
+        recorrerPreOrden(arbol);
+        System.out.println("_______________------------------------");
+        recorrerInorden(arbol);
     }
 
-    public void recorrer(Nodo n){
+    public void recorrerInorden(Nodo n){
         if(n!=null){
-            recorrer(n.getIzquierda());
+            recorrerInorden(n.getIzquierda());
             System.out.println("Nodo "+ n.getDato() );
-            recorrer(n.getDerecha());
+            recorrerInorden(n.getDerecha());
         }
+
+    }
+
+    public void recorrerPreOrden(Nodo n){
+        if(n!=null) {
+            System.out.println(n.getDato());
+            recorrerPreOrden(n.getIzquierda());
+            recorrerPreOrden(n.getDerecha());
+        }
+    }
+
+    public void recorrerPostOrden(Nodo n){
 
     }
 
@@ -73,13 +87,7 @@ public class ArbolBinario {
 
     }
 
-    public void recorrerInorden(Nodo n){
-        if(n!=null){
 
-        }
-
-
-    }
 
 
 
