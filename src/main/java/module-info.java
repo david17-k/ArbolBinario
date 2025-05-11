@@ -7,4 +7,5 @@ module uq.arboles {
 
     opens uq.arboles to javafx.fxml;
     exports uq.arboles;
+
 }

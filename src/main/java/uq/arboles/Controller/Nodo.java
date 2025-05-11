@@ -1,7 +1,7 @@
 package uq.arboles.Controller;
 
 public class Nodo {
-    private Nodo raiz;
+
     private Nodo derecha;
     private Nodo izquierda;
     private int dato;
@@ -34,11 +34,5 @@ public class Nodo {
         this.izquierda = izquierda;
     }
 
-    public Nodo getRaiz() {
-        return raiz;
-    }
 
-    public void setRaiz(Nodo raiz) {
-        this.raiz = raiz;
-    }
 }
