@@ -74,6 +74,8 @@ public class ControllerViewArbol {
     @FXML
     private TextField imprimirResultado;
 
+
+
     private static final double RADIO = 20;
     private static final double V_GAP = 60;
 
@@ -97,14 +99,29 @@ public class ControllerViewArbol {
         imprimirResultado.setText(arbolBinario.verificar(Integer.parseInt(txtBuscar.getText())));
     }
 
-    public void recorrerArbol(ActionEvent event){
-    }
+
     private void configurarBoton(){
-        MenuItem I=new MenuItem("Preorden");
-        MenuItem I1 = new MenuItem("Inorden");
-        MenuItem I2=new MenuItem("PostOrden");
-        bttRecorrer.getItems().addAll(I,I1,I2);
-        I.setOnAction(event -> { imprimirResultado.setText(arbolBinario.mostrar());});
+        MenuItem preordenItem = new MenuItem("Preorden");
+        MenuItem inordenItem = new MenuItem("Inorden");
+        MenuItem postordenItem = new MenuItem("Postorden");
+
+        bttRecorrer.getItems().addAll(preordenItem, inordenItem, postordenItem);
+
+
+        preordenItem.setOnAction(event -> {
+            String resultado = String.valueOf(arbolBinario.mostrar());
+            imprimirResultado.setText("Preorden: " + resultado);
+        });
+
+        inordenItem.setOnAction(event -> {
+            String resultado = arbolBinario.mostrar().toString();
+            imprimirResultado.setText("Inorden: " + resultado);
+        });
+
+        postordenItem.setOnAction(event -> {
+            String resultado = arbolBinario.mostrar().toString();
+            imprimirResultado.setText("Postorden: " + resultado);
+        });
     }
 
 
