@@ -12,6 +12,7 @@ import javafx.scene.text.Text;
 import uq.arboles.Controller.ArbolBinario;
 import uq.arboles.Controller.Nodo;
 import javafx.scene.paint.Color;
+import  javafx.scene.control.MenuItem;
 
 import java.awt.*;
 
@@ -55,8 +56,6 @@ public class ControllerViewArbol {
     @FXML
     private Button bttObtenrNivel;
 
-    @FXML
-    private MenuButton bttRecorree;
 
     @FXML
     private TextField txtAgregarN;
@@ -68,12 +67,19 @@ public class ControllerViewArbol {
     private TextField txtDatoB;
     @FXML
     private AnchorPane paneArbol;
+    @FXML
+    private MenuButton bttRecorrer;
+
+
+    @FXML
+    private TextField imprimirResultado;
 
     private static final double RADIO = 20;
     private static final double V_GAP = 60;
 
     @FXML
     void initialize(){
+    configurarBoton();
 
 
     }
@@ -84,7 +90,26 @@ public class ControllerViewArbol {
         arbolBinario.agregarDato(Integer.parseInt(txtAgregarN.getText()));
         arbolBinario.mostrar();
         dibujarArbol();
+        limpiar();
     }
+
+    public void buscar(ActionEvent event){
+        limpiarConsola();
+        imprimirResultado.setText(arbolBinario.verificar(Integer.parseInt(txtBuscar.getText())));
+    }
+
+    public void recorrerArbol(ActionEvent event){
+
+
+    }
+    private void configurarBoton(){
+        MenuItem I=new MenuItem("Preorden");
+        MenuItem I1 = new MenuItem("Inorden");
+        MenuItem I2=new MenuItem("PostOrden");
+        bttRecorrer.getItems().addAll(I,I1,I2);
+    }
+
+
 
     private void dibujarArbol() {
         paneArbol.getChildren().clear(); // limpia dibujo anterior
@@ -120,6 +145,15 @@ public class ControllerViewArbol {
         Text text = new Text(x - 7, y + 5, String.valueOf(nodo.getDato()));
         paneArbol.getChildren().addAll(circle, text);
     }
+
+    private void limpiar(){
+        txtAgregarN.setText("");
+    }
+    private void limpiarConsola(){
+        imprimirResultado.setText("");
+    }
+
+
 
 
 

@@ -49,6 +49,38 @@ public class ArbolBinario {
 
     }
 
+    public String verificar(int buscar){
+        if(buscarNumero(buscar,arbol)){
+            return "Si esta";
+        }else{
+            return "No esta";
+        }
+    }
+
+    public boolean buscarNumero(int buscar,Nodo aux){
+        if(aux!=null){
+            if(buscar==aux.getDato()){
+                return true;
+            }
+            if (buscar>aux.getDato()) {
+               return buscarNumero(buscar,aux.getDerecha());
+            }else{
+                return buscarNumero(buscar,aux.getIzquierda());
+            }
+        }else{
+             return false;
+        }
+
+    }
+
+    public void recorrerInorden(Nodo n){
+        if(n!=null){
+
+        }
+
+
+    }
+
 
 
     private boolean isVerificar() {
