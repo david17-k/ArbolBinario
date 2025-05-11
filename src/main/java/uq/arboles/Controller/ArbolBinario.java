@@ -60,6 +60,9 @@ public class ArbolBinario {
     }
 
     public void recorrerPostOrden(Nodo n){
+        if(n!=null){
+            recorrerPostOrden(n.getIzquierda());
+        }
 
     }
 
