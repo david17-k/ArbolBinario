@@ -30,6 +30,10 @@ public class Nodo {
         return izquierda;
     }
 
+    public Nodo(){
+
+    }
+
     public void setIzquierda(Nodo izquierda) {
         this.izquierda = izquierda;
     }

@@ -28,7 +28,6 @@ public class ArbolBinario {
                     n=n.getIzquierda();
                 }
             }
-            System.out.println(padre.getDato());
             if(numero< padre.getDato()){
                 padre.setIzquierda(aux);
             }else{
