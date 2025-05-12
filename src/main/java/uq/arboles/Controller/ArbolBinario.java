@@ -36,28 +36,42 @@ public class ArbolBinario {
         }
     }
 
-    public StringBuilder mostrar(){
+    public StringBuilder mostrarPostOrden(){
         StringBuilder sd=new StringBuilder();
        sd=recorrerPostOrden(arbol,sd);
         System.out.println(sd);
        return new StringBuilder(sd.toString());
     }
+    public StringBuilder mostrarInorden(){
+        StringBuilder sd=new StringBuilder();
+        sd=recorrerInorden(arbol,sd);
+        System.out.println(sd);
+        return new StringBuilder(sd.toString());
+    }
+    public StringBuilder mostrarPreOrden(){
+        StringBuilder sd=new StringBuilder();
+        sd=recorrerPreOrden(arbol,sd);
+        System.out.println(sd);
+        return new StringBuilder(sd.toString());
+    }
 
-    public void recorrerInorden(Nodo n){
+    public StringBuilder recorrerInorden(Nodo n ,StringBuilder mensaje){
         if(n!=null){
-            recorrerInorden(n.getIzquierda());
-            System.out.println("Nodo "+ n.getDato() );
-            recorrerInorden(n.getDerecha());
+            recorrerInorden(n.getIzquierda(),mensaje);
+            mensaje.append(n.getDato());
+            recorrerInorden(n.getDerecha(),mensaje);
         }
+        return mensaje;
 
     }
 
-    public void recorrerPreOrden(Nodo n){
+    public StringBuilder recorrerPreOrden(Nodo n,StringBuilder mensaje){
         if(n!=null) {
-            System.out.println(n.getDato());
-            recorrerPreOrden(n.getIzquierda());
-            recorrerPreOrden(n.getDerecha());
+           mensaje.append(n.getDato());
+            recorrerPreOrden(n.getIzquierda(),mensaje);
+            recorrerPreOrden(n.getDerecha(),mensaje);
         }
+        return mensaje;
     }
 
     public StringBuilder recorrerPostOrden(Nodo n, StringBuilder mensaje){// 7, 5 , 10 ,8 ,12
@@ -67,6 +81,10 @@ public class ArbolBinario {
             mensaje.append(n.getDato());
         }
         return mensaje;
+    }
+
+    public boolean isEmpty(){
+        return arbol==null;
     }
 
     public String verificar(int buscar){
@@ -92,6 +110,52 @@ public class ArbolBinario {
         }
 
     }
+
+    public StringBuilder altura(){
+        StringBuilder sd=new StringBuilder();
+        sd.append(obtenerAltura(arbol));
+        return sd;
+    }
+
+    public int obtenerAltura(Nodo n){
+        if(n==null) {
+            return 0;
+        }
+           int alturaIzquierda= obtenerAltura(n.getIzquierda());
+        System.out.println(alturaIzquierda);
+           int alturaDerecha= obtenerAltura(n.getDerecha());
+        System.out.println(alturaDerecha);
+           return Math.max(alturaIzquierda,alturaDerecha)+1;
+    }
+
+    public StringBuilder hojas(){
+        StringBuilder sv=new StringBuilder();
+        sv.append(contarHojas(arbol));
+        return sv;
+    }
+
+    public int contarHojas(Nodo n){
+        if(n==null){
+            return 0;
+        }
+        if(n.getIzquierda()==null && n.getDerecha()==null ){
+            return 1;
+        }else {
+           int izqui= contarHojas(n.getIzquierda());
+           int derec= contarHojas(n.getDerecha());
+            return izqui+derec;
+        }
+    }
+
+    public void borrarArbol(){
+        arbol=null;
+    }
+
+
+
+   public int borrarDato(int borrar){
+        return 0;
+   }
 
 
 

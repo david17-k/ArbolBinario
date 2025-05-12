@@ -86,6 +86,11 @@ public class ControllerViewArbol {
 
     }
 
+    public void obtenerAltura(ActionEvent event){
+        String m= String.valueOf(arbolBinario.altura());
+        imprimirResultado.setText("Altura del arbol "+ m);
+    }
+
 
 
     public void agregar(ActionEvent event){
@@ -109,17 +114,17 @@ public class ControllerViewArbol {
 
 
         preordenItem.setOnAction(event -> {
-            String resultado = String.valueOf(arbolBinario.mostrar());
+            String resultado = String.valueOf(arbolBinario.mostrarPreOrden());
             imprimirResultado.setText("Preorden: " + resultado);
         });
 
         inordenItem.setOnAction(event -> {
-            String resultado = arbolBinario.mostrar().toString();
+            String resultado = arbolBinario.mostrarInorden().toString();
             imprimirResultado.setText("Inorden: " + resultado);
         });
 
         postordenItem.setOnAction(event -> {
-            String resultado = arbolBinario.mostrar().toString();
+            String resultado = arbolBinario.mostrarPostOrden().toString();
             imprimirResultado.setText("Postorden: " + resultado);
         });
     }
@@ -166,6 +171,27 @@ public class ControllerViewArbol {
     }
     private void limpiarConsola(){
         imprimirResultado.setText("");
+    }
+
+    public void borrarArbol(ActionEvent event){
+        arbolBinario.borrarArbol();
+        paneArbol.getChildren().clear();
+    }
+
+    public void isEmpty(ActionEvent event){
+        String mensaje="";
+        if(arbolBinario.isEmpty()){
+             mensaje="Arbol vacio";
+            imprimirResultado.setText(mensaje);
+        }else{
+            mensaje="Arbol con datos";
+            imprimirResultado.setText(mensaje);
+        }
+    }
+
+    public void contarHojas(ActionEvent event){
+        String m= String.valueOf(arbolBinario.hojas());
+        imprimirResultado.setText(m);
     }
 
 

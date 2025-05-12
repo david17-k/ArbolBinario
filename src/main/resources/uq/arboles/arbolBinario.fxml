@@ -13,18 +13,19 @@
       <TextField fx:id="txtBuscar" layoutX="14.0" layoutY="64.0" prefHeight="25.0" prefWidth="110.0" promptText="Buscar Numero" />
       <Button fx:id="bttBuscar" layoutX="135.0" layoutY="64.0" mnemonicParsing="false" onAction="#buscar" prefHeight="25.0" prefWidth="59.0" text="Buscar" />
       <Button fx:id="bttObtenerPeso" layoutX="340.0" layoutY="64.0" mnemonicParsing="false" text="Obtener Peso" />
-      <Button fx:id="bttAltura" layoutX="341.0" layoutY="24.0" mnemonicParsing="false" text="Obtener Altura" />
-      <Button fx:id="bttObtenrNivel" layoutX="439.0" layoutY="64.0" mnemonicParsing="false" text="Obtener Nivel" />
-      <Button fx:id="bttContarHojas" layoutX="441.0" layoutY="24.0" mnemonicParsing="false" text="Contar Hojas" />
-      <Button fx:id="bttObtenerMenor" layoutX="548.0" layoutY="64.0" mnemonicParsing="false" text="Obtener Nivel" />
+      <Button fx:id="bttAltura" layoutX="341.0" layoutY="24.0" mnemonicParsing="false" onAction="#obtenerAltura" text="Obtener Altura" />
+      <Button fx:id="bttObtenrNivel" layoutX="439.0" layoutY="64.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Obtener Nivel" />
+      <Button fx:id="bttContarHojas" layoutX="441.0" layoutY="24.0" mnemonicParsing="false" onAction="#contarHojas" text="Contar Hojas" />
+      <Button fx:id="bttObtenerMenor" layoutX="548.0" layoutY="64.0" mnemonicParsing="false" text="Obtener Menor" />
       <Button fx:id="bttAmplitud" layoutX="537.0" layoutY="24.0" mnemonicParsing="false" text="Imprimir amplitud" />
       <Button fx:id="bttEliminarDato" layoutX="134.0" layoutY="98.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Eliminar Dato" />
-      <MenuButton fx:id="bttRecorrer" layoutX="213.0" layoutY="24.0" mnemonicParsing="false" onAction="#recorrerArbol" text="Recorrer Arbol" textAlignment="CENTER">
+      <MenuButton fx:id="bttRecorrer" layoutX="213.0" layoutY="24.0" mnemonicParsing="false" text="Recorrer Arbol" textAlignment="CENTER">
       </MenuButton>
-      <Button fx:id="bttNodoMenor" layoutX="441.0" layoutY="98.0" mnemonicParsing="false" text="Nodo Menor" />
-      <Button fx:id="bttMayor" layoutX="314.0" layoutY="98.0" mnemonicParsing="false" text="Nodo Mayor" />
-      <Button fx:id="bttBorrarArbol" layoutX="242.0" layoutY="64.0" mnemonicParsing="false" text="Borrar Arbol" />
+      <Button fx:id="bttNodoMenor" layoutX="346.0" layoutY="98.0" mnemonicParsing="false" text="Nodo Menor" />
+      <Button fx:id="bttMayor" layoutX="241.0" layoutY="98.0" mnemonicParsing="false" text="Nodo Mayor" />
+      <Button fx:id="bttBorrarArbol" layoutX="213.0" layoutY="64.0" mnemonicParsing="false" onAction="#borrarArbol" prefHeight="25.0" prefWidth="110.0" text="Borrar Arbol" />
       <TextField fx:id="txtDatoB" layoutX="14.0" layoutY="98.0" prefHeight="25.0" prefWidth="110.0" promptText="Borrar" />
       <TextField fx:id="imprimirResultado" layoutX="41.0" layoutY="458.0" prefHeight="67.0" prefWidth="603.0" />
+      <Button fx:id="bttVacio" onAction="#isEmpty" layoutX="447.0" layoutY="98.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Vacio" />
    </children>
 </AnchorPane>
