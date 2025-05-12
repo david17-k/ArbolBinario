@@ -16,7 +16,7 @@
       <Button fx:id="bttAltura" layoutX="294.0" layoutY="64.0" mnemonicParsing="false" onAction="#obtenerAltura" text="Obtener Altura" />
       <Button fx:id="bttObtenerNivel" layoutX="310.0" layoutY="24.0" mnemonicParsing="false" onAction="#obtenerNivel" prefHeight="25.0" prefWidth="95.0" text="Obtener Nivel" />
       <Button fx:id="bttContarHojas" layoutX="513.0" layoutY="24.0" mnemonicParsing="false" onAction="#contarHojas" text="Contar Hojas" />
-      <Button fx:id="bttObtenerMenor" layoutX="616.0" layoutY="98.0" mnemonicParsing="false" text="Obtener Menor" />
+      <Button fx:id="bttObtenerMenor" onAction="#obtenerMenor" layoutX="616.0" layoutY="98.0" mnemonicParsing="false" text="Obtener Menor" />
       <Button fx:id="bttAmplitud" onAction="#imprimirAmplitud" layoutX="616.0" layoutY="24.0" mnemonicParsing="false" text="Imprimir amplitud" />
       <Button fx:id="bttEliminarDato" layoutX="134.0" layoutY="98.0" mnemonicParsing="false" onAction="#borrarDato" prefHeight="25.0" prefWidth="95.0" text="Eliminar Dato" />
       <MenuButton fx:id="bttRecorrer" layoutX="610.0" layoutY="64.0" mnemonicParsing="false" text="Recorrer Arbol" textAlignment="CENTER">
