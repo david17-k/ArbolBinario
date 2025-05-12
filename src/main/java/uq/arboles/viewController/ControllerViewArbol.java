@@ -69,6 +69,8 @@ public class ControllerViewArbol {
     private AnchorPane paneArbol;
     @FXML
     private MenuButton bttRecorrer;
+    @FXML
+    private TextField txtNivel;
 
 
     @FXML
@@ -191,6 +193,22 @@ public class ControllerViewArbol {
 
     public void contarHojas(ActionEvent event){
         String m= String.valueOf(arbolBinario.hojas());
+        imprimirResultado.setText(m);
+    }
+
+    public void borrarDato(ActionEvent event){
+        int borrar= Integer.parseInt(txtDatoB.getText());
+        arbolBinario.borrarDato(borrar);
+    }
+
+    public void obtenerPeso(ActionEvent event){
+        String m= String.valueOf(arbolBinario.peso());
+        imprimirResultado.setText(m);
+    }
+
+    public void obtenerNivel(ActionEvent event){
+        int valor= Integer.parseInt(txtNivel.getText());
+        String m= String.valueOf(arbolBinario.nivel(valor));
         imprimirResultado.setText(m);
     }
 
