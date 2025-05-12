@@ -286,11 +286,12 @@ public class ArbolBinario {
         if (n == null) {
             return 0;
         }
-        if (n.getDato() <=menor) {
-            menor = n.getDato();
-        }
-        int i=obtenerMayor(n.getIzquierda(),menor);
-        return Math.min(menor,i);
+    if(n.getIzquierda()==null){
+        return n.getDato();
+    }
+    int i=obtenerMenor(n.getIzquierda(),menor);
+
+        return Math.min(i,menor);
     }
 
     private boolean isVerificar() {
