@@ -228,15 +228,21 @@ public class ArbolBinario {
 
     }
 
+    public StringBuilder amplitud(){
+        StringBuilder sz=new StringBuilder();
+        imprimirAmplitud(arbol,sz);
+        return sz;
+    }
+
 
 
     private StringBuilder imprimirAmplitud(Nodo n,StringBuilder sx) {
-        if (arbol == null) {
+        if (n == null) {
             return null;
         }
 
         Queue<Nodo> cola = new LinkedList<>();
-        cola.add(arbol);
+        cola.add(n);
 
         while (!cola.isEmpty()) {
             Nodo actual = cola.poll();
@@ -253,8 +259,39 @@ public class ArbolBinario {
         return sx;
     }
 
+    public StringBuilder mayor(){
+        StringBuilder sa=new StringBuilder();
+        sa.append(obtenerMayor(arbol,0));
+        return sa;
+    }
 
+    public StringBuilder menor(){
+        StringBuilder sw=new StringBuilder();
+        sw.append(obtenerMenor(arbol,arbol.getDato()));
+        return sw;
+    }
 
+    private int obtenerMayor(Nodo n,int mayor) {
+        if (n == null) {
+            return 0;
+        }
+            if (n.getDato() > mayor) {
+                mayor = n.getDato();
+            }
+           int i=obtenerMayor(n.getDerecha(),mayor);
+        return Math.max(mayor,i);
+    }
+
+    private int obtenerMenor(Nodo n,int menor){
+        if (n == null) {
+            return 0;
+        }
+        if (n.getDato() <=menor) {
+            menor = n.getDato();
+        }
+        int i=obtenerMayor(n.getIzquierda(),menor);
+        return Math.min(menor,i);
+    }
 
     private boolean isVerificar() {
         return arbol==null;

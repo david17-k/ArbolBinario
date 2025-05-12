@@ -73,6 +73,9 @@ public class ControllerViewArbol {
     private TextField txtNivel;
 
 
+
+
+
     @FXML
     private TextField imprimirResultado;
 
@@ -209,6 +212,21 @@ public class ControllerViewArbol {
     public void obtenerNivel(ActionEvent event){
         int valor= Integer.parseInt(txtNivel.getText());
         String m= String.valueOf(arbolBinario.nivel(valor));
+        imprimirResultado.setText(m);
+    }
+
+    public void imprimirAmplitud(ActionEvent event){
+        String m= String.valueOf(arbolBinario.amplitud());
+        imprimirResultado.setText(m);
+    }
+
+    public void obtenerMayor(ActionEvent event){
+        String m= String.valueOf(arbolBinario.mayor());
+        imprimirResultado.setText(m);
+    }
+
+    public void obtenerMenor(ActionEvent event){
+        String m= String.valueOf(arbolBinario.menor());
         imprimirResultado.setText(m);
     }
 
